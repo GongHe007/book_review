@@ -1,0 +1,29 @@
+.container.login-form
+  = form_for :session, :html => {:class => 'form-horizontal'}, url: login_sessions_path, method: :post do |f|
+    .form-group
+      =f.label :username, '账号', class: 'col-sm-1 control-label'
+      .col-sm-3
+        =f.text_field :username, class: 'form-control'
+    .form-group
+      =f.label :password, '密码', class: 'col-sm-1 control-label'
+      .col-sm-3
+        =f.password_field :password, class: 'form-control'
+    .form-group
+      .col-sm-offset-1.col-sm-4
+        %strong.error=@notice
+    .form-group
+      .col-sm-offset-1.col-sm-4
+        = f.submit "登录", class: 'btn btn-primary'
+
+:css
+  body {
+    background-color: #eee;
+  }
+  .login-form {
+    position:absolute;
+    top:20%;
+    left:35%;
+  }
+  .error {
+    color:red;
+  }
