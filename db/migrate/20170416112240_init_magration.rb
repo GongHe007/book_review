@@ -16,7 +16,7 @@ class InitMagration < ActiveRecord::Migration[5.0]
       t.timestamps
     end
 
-    create_table :comments do |t|
+    create_table :book_reviews do |t|
       t.integer :user_id, null: false
       t.integer :book_id, null: false
       t.string :title, null: false
@@ -26,8 +26,9 @@ class InitMagration < ActiveRecord::Migration[5.0]
       t.timestamps
     end
 
-    create_table :reply_comments do |t|
-      t.integer :comment_id, null: false
+    create_table :replys do |t|
+      t.integer :user_id, null: false
+      t.integer :book_review_id, null: false
       t.text :content, null: false
       t.boolean :online, null: false, defult: true
 

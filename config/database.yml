@@ -8,4 +8,4 @@ default: &default
 
 development:
   <<: *default
-  database: demo_development
+  database: book_revi_development

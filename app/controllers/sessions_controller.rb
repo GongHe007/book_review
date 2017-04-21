@@ -6,7 +6,12 @@ class SessionsController < ApplicationController
   end
 
   def login
-    binding.pry
+    username = params[:session][:username]
+    password = params[:session][:password]
+
+    if username == "admin" && password = "admin"
+      redirect_to admin_books_path
+    end
   end
 
   def logout
