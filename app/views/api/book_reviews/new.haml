@@ -1,11 +1,11 @@
-.container
+.container{style: "margin-top: 50px"}
   = form_for :book_review, :html => {:class => 'form-horizontal'}, url: api_book_reviews_path, method: :post do |f|
     .form-group
-      .col-sm-12
-        =f.text_field :title, class: 'form-control', placeholder: "无标题文章"
+      .col-sm-12{}
+        =f.text_field :title, class: 'form-control', placeholder: "无标题文章", style: "width: 100%"
     .form-group
       .col-sm-12
-        =f.text_field :content, class: 'form-control', placeholder: "写下你的书评吧…"
+        =f.text_area :content, class: 'form-control', placeholder: "写下你的书评吧…", rows: 10
     .form-group
       .col-sm-offset-1.col-sm-4
         %strong.error=@notice
