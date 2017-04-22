@@ -1,7 +1,7 @@
 .container.login-form
   = form_for :user, :html => {:class => 'form-horizontal'}, url: api_users_path, method: :post do |f|
     .form-group
-      =f.label :username, '账号', class: 'col-sm-1 control-label'
+      =f.label :username, '手机号', class: 'col-sm-1 control-label'
       .col-sm-3
         =f.text_field :username, class: 'form-control'
     .form-group

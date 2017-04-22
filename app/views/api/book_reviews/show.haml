@@ -1,0 +1,44 @@
+.container{style: "margin-top:30px"}
+  %h2{style: "text-align:center"}= @book_review.title
+  .row{style: "text-align:center"}
+    .col-md-5{style: "margin-left:60px"}
+      %h4{style: "text-align:right;"}= @book_review.user.nikename
+    .col-md-2
+      %h4= @book_review.created_at.strftime("%F")
+  %hr
+
+  .form-group
+    .col-sm-8{style: "margin-left:10%"}
+      %input.form-control#reply-content{placeholder: "写下你的评论。。。"}
+    .col-sm-2
+      %a.btn.btn-primary#reply 发送
+
+%h4{style: "margin-top: 50px;"} 评论
+%hr
+- @replies.each do |reply|
+  .row
+    .col-sm-1
+      %h4= reply.user.nikename
+    .col-sm-2
+      %h4= reply.created_at.strftime("%F")
+  %span= reply.content
+  %hr
+
+:javascript
+  $(document).ready(function(){
+    $('#reply').click(function(){
+      var content = $('#reply-content').val()
+      $.ajax({
+        url: "#{api_replies_path}",
+        type: 'post',
+        data: {book_review_id: "#{@book_review.id}", content: content},
+        datatype: "json"
+      }).done(function(json){
+        if(json.success){
+          window.location.reload()
+        } else {
+          alert("发送失败")
+        }
+      })
+    })
+  })

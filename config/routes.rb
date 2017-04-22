@@ -8,7 +8,8 @@ Rails.application.routes.draw do
   namespace :api do
     resources :users, only: [:new, :create]
     resources :books, only: [:index, :show]
-    resources :book_reviews, only: [:new, :create]
+    resources :book_reviews, only: [:new, :create, :show]
+    resources :replies, only: [:create]
   end
 
   namespace :admin do
@@ -20,7 +21,7 @@ Rails.application.routes.draw do
   resources :sessions, only: [:new] do
     collection do
       post :login
-      delete :logout
+      get :logout
     end
   end
 end

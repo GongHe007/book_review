@@ -11,12 +11,21 @@
     .col-md-10
       %h3 书评
     .col-md-2{style: "margin-top:20px"}
-      = link_to "我要写书评", new_api_book_review_path, class: "btn btn-primary", style: "color: #FFF; text-decoration:none;"
+      = link_to "我要写书评", new_api_book_review_path(book_id: @book.id), class: "btn btn-primary", style: "color: #FFF; text-decoration:none;"
   - @book_reviews.each do |book_review|
-    %h3= book_review.title
-    .row
-      .col-md-1
-        %div= book_review.user.nickname
-      .col-md-1
-        %div= book_review.created_at.strftime("%F")
+    .container.book_review{id: book_review.id}
+      %h3= book_review.title
+      .row
+        .col-md-1
+          %div= book_review.user.nikename
+        .col-md-2
+          %div= book_review.created_at.strftime("%F")
+      %span= book_review.content
+    %hr
 
+:javascript
+  $(document).ready(function() {
+    $('.book_review').click(function(){
+      window.location = "/api/book_reviews/" + this.id;
+    })
+  })
