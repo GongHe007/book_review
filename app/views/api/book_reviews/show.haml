@@ -5,6 +5,7 @@
       %h4{style: "text-align:right;"}= @book_review.user.nikename
     .col-md-2
       %h4= @book_review.created_at.strftime("%F")
+  %span= @book_review.content
   %hr
 
   .form-group
