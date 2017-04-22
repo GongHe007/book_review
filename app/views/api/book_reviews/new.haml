@@ -1,0 +1,22 @@
+.container
+  = form_for :book_review, :html => {:class => 'form-horizontal'}, url: api_book_reviews_path, method: :post do |f|
+    .form-group
+      .col-sm-12
+        =f.text_field :title, class: 'form-control', placeholder: "无标题文章"
+    .form-group
+      .col-sm-12
+        =f.text_field :content, class: 'form-control', placeholder: "写下你的书评吧…"
+    .form-group
+      .col-sm-offset-1.col-sm-4
+        %strong.error=@notice
+    .form-group
+      .col-sm-offset-1.col-sm-1
+        = f.submit "发布文章", class: 'btn btn-primary'
+
+:css
+  body {
+    background-color: #eee;
+  }
+  .error {
+    color:red;
+  }

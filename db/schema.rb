@@ -10,7 +10,7 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
-ActiveRecord::Schema.define(version: 20170421034130) do
+ActiveRecord::Schema.define(version: 20170421075822) do
 
   create_table "active_admin_comments", force: :cascade, options: "ENGINE=InnoDB DEFAULT CHARSET=utf8" do |t|
     t.string   "namespace"
@@ -59,6 +59,8 @@ ActiveRecord::Schema.define(version: 20170421034130) do
     t.boolean  "online",      null: false
     t.datetime "created_at",  null: false
     t.datetime "updated_at",  null: false
+    t.string   "author",      null: false
+    t.string   "img",         null: false
   end
 
   create_table "replys", force: :cascade, options: "ENGINE=InnoDB DEFAULT CHARSET=utf8" do |t|

@@ -1,0 +1,14 @@
+.container
+  %h1 读书
+  %hr
+  .container
+    - @books.each_with_index do |book, index|
+      - if index%3 == 0
+        .row
+      .col-md-4
+        .thumbnail
+          %a{:href => api_book_path(book)}
+            %img{:alt => "Lights", :src => book.img, :style => "width:100%"}/
+            .caption
+              %p= book.name
+              %p= book.author
