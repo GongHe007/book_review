@@ -39,8 +39,6 @@ ActiveRecord::Schema.define(version: 20170421075822) do
     t.string   "last_sign_in_ip"
     t.datetime "created_at",                          null: false
     t.datetime "updated_at",                          null: false
-    t.index ["email"], name: "index_admin_users_on_email", unique: true, using: :btree
-    t.index ["reset_password_token"], name: "index_admin_users_on_reset_password_token", unique: true, using: :btree
   end
 
   create_table "book_reviews", force: :cascade, options: "ENGINE=InnoDB DEFAULT CHARSET=utf8" do |t|
@@ -63,7 +61,7 @@ ActiveRecord::Schema.define(version: 20170421075822) do
     t.string   "img",         null: false
   end
 
-  create_table "replys", force: :cascade, options: "ENGINE=InnoDB DEFAULT CHARSET=utf8" do |t|
+  create_table "replies", force: :cascade, options: "ENGINE=InnoDB DEFAULT CHARSET=utf8" do |t|
     t.integer  "user_id",                      null: false
     t.integer  "book_review_id",               null: false
     t.text     "content",        limit: 65535, null: false
