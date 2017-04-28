@@ -1,4 +1,7 @@
 zh-CN:
+  time:
+    formats:
+      long: "%Y-%m-%d %H:%M:%S"
   attributes:
     last_lesson_title: 最后发布的课程名称
     admin_only: 仅管理员可见
@@ -10,6 +13,19 @@ zh-CN:
     fake_subscribers_count_speed: 假订阅增长速度
     name: 名称
     mobile: 手机
+    book_review: 书评
+    user: 用户
+    book: 图书
+    online: 上线
+    reply: 回复
+    content: 内容
+    title: 标题
+    id: 编号
+    description: 描述
+    img: 图片
+    username: 账号
+    nikename: 昵称
+    author: 作者
     password: 密码
     projects_count: 项目数量
     introduction: 课程介绍
