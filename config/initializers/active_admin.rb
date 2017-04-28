@@ -55,6 +55,8 @@ ActiveAdmin.setup do |config|
   # This setting changes the method which Active Admin calls
   # within the application controller.
   config.authentication_method = :authenticate_admin_user!
+  config.root_to = 'books#index'
+
 
   # == User Authorization
   #
