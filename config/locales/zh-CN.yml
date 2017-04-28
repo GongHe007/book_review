@@ -1,0 +1,81 @@
+zh-CN:
+  attributes:
+    last_lesson_title: 最后发布的课程名称
+    admin_only: 仅管理员可见
+    created_at: 创建时间
+    updated_at: 修改时间
+    subscribers_count: 订阅人数
+    fake_subscribers_count_goal: 预期假订阅数
+    fake_subscribers_count: 假订阅人数
+    fake_subscribers_count_speed: 假订阅增长速度
+    name: 名称
+    mobile: 手机
+    password: 密码
+    projects_count: 项目数量
+    introduction: 课程介绍
+    category: 类别
+    project: 项目
+    image: 图片
+    is_accumulative: 累计时间
+    is_released: 已发布
+    title: 标题
+    subtitle: 副标题
+    cover_image: 封面图
+    lessons_count: 课程数量
+    total_fee: 总价(分)
+    total_fee_human: 总价
+    is_published: 已发布
+    intro_teacher: 老师介绍
+    intro_adapter: 适合人群
+    attention: 订阅须知
+    published_at: 发布时间
+    pay_channel: 支付渠道
+    channel: 专栏
+    duration_human: 时长
+    duration: 时长
+    file_size_human: 资源大小
+    file_size: 资源大小
+    is_an_audition: 试听
+    published_auditions_count: 线上试听数量
+    file: 文件
+    resource_type: 资源类型
+    resource: 资源
+    resource_id: 资源ID
+    'no': 订单号
+    user_guid: 用户GUID
+    status: 支付状态
+    version: 版本
+    is_active: 激活的
+    published_lessons_count: 已发布课程数量
+    unpublish_lessons_count: 未发布课程数量
+  activerecord:
+    models:
+      ios_checking_version: ios审核版本
+      channel: 专栏
+      order: 订单
+      lesson: 课程
+      admin: 管理
+      morning_read: 格子电台
+      admin_user: 管理员
+      category: 类别
+      user: 用户
+      checkin: 打卡记录
+      comment: 管理员评论
+      project: 项目
+      task: 任务
+      project_reference: 内容精选
+    attributes:
+      product:
+        is_hot: 热门
+
+  active_admin:
+    comments:
+      delete_confirmation: 删除
+      resource_type: 资源类型
+      author_type: 作者类型
+      created_at: 创建时间
+    scopes:
+      published: 已发布
+      unpublished: 未发布
+      paid: 已支付
+      unpaid: 未支付

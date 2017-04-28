@@ -15,7 +15,8 @@ Rails.application.routes.draw do
   namespace :admin do
     resources :books, except: [:destroy]
     resources :comments, except: [:destroy]
-    resources :reply_comments, except: [:destroy]
+    resources :book_reviews, except: [:destroy]
+    resources :replies, except: [:destroy]
   end
 
   resources :sessions, only: [:new] do

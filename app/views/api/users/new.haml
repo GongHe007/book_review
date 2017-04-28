@@ -1,23 +1,24 @@
-.container.login-form
+.login-form
+  .div.title 读书分享平台
   = form_for :user, :html => {:class => 'form-horizontal'}, url: api_users_path, method: :post do |f|
     .form-group
-      =f.label :username, '手机号', class: 'col-sm-1 control-label'
-      .col-sm-3
+      =f.label :username, '手机号', class: 'col-sm-3 control-label'
+      .col-sm-9
         =f.text_field :username, class: 'form-control'
     .form-group
-      =f.label :nickname, '昵称', class: 'col-sm-1 control-label'
-      .col-sm-3
+      =f.label :nickname, '昵称', class: 'col-sm-3 control-label'
+      .col-sm-9
         =f.text_field :nikename, class: 'form-control'
     .form-group
-      =f.label :password, '密码', class: 'col-sm-1 control-label'
-      .col-sm-3
+      =f.label :password, '密码', class: 'col-sm-3 control-label'
+      .col-sm-9
         =f.password_field :password, class: 'form-control'
 
     .form-group
       .col-sm-offset-1.col-sm-4
         %strong.error=@notice
     .form-group
-      .col-sm-offset-1.col-sm-1
+      .col-sm-offset-1.col-sm-6{style: "text-align: center;"}
         = f.submit "注册", class: 'btn btn-primary'
 
 :css
@@ -28,7 +29,24 @@
     position:absolute;
     top:20%;
     left:35%;
+    border: solid;
+    width: 400px;
+    padding-bottom: 20px;
+  }
+  .title {
+    width: 100%;
+    text-align: center;
+    border-bottom: solid;
+    height: 40px;
+    line-height: 40px;
+    margin-bottom: 21px;
+    font-size: 20px;
   }
   .error {
     color:red;
+  }
+
+  a, a:link {
+    color: #FFF;
+    text-decoration: none;
   }

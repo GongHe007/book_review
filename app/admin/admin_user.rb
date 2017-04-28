@@ -1,28 +1,17 @@
 ActiveAdmin.register AdminUser do
-  permit_params :email, :password, :password_confirmation
-
-  index do
-    selectable_column
-    id_column
-    column :email
-    column :current_sign_in_at
-    column :sign_in_count
-    column :created_at
-    actions
-  end
-
-  filter :email
-  filter :current_sign_in_at
-  filter :sign_in_count
-  filter :created_at
+  permit_params :email, :password
+  menu label: "管理员", priority: 100
+  filter :name
 
   form do |f|
-    f.inputs "Admin Details" do
-      f.input :email
-      f.input :password
-      f.input :password_confirmation
+    f.semantic_errors *f.object.errors.keys
+
+    inputs '基本信息' do
+      input :email
+      input :password
     end
-    f.actions
+
+    actions
   end
 
 end

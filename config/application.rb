@@ -10,6 +10,7 @@ module Demo
   class Application < Rails::Application
     config.eager_load_paths += %W(#{config.root}/lib)
     config.eager_load_paths += Dir["#{config.root}/lib/**/"]
+    config.i18n.default_locale = :'zh-CN'
     config.time_zone = 'Beijing'
   end
 end

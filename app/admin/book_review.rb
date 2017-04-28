@@ -1,4 +1,5 @@
 ActiveAdmin.register BookReview do
+  menu label: "书评", priority: 100
 # See permitted parameters documentation:
 # https://github.com/activeadmin/activeadmin/blob/master/docs/2-resource-customization.md#setting-up-strong-parameters
 #
