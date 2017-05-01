@@ -5,7 +5,7 @@ class Api::BooksController < ApiController
       @search_books = Book.where("name like ?", "%#{content}%")
     end
     @time_books = Book.order("updated_at desc").limit(12)
-    @review_books = Book.all.sort_by{|x| [x.book_reviews_count, x.updated_at]}[0..11]
+    @review_books = Book.order("book_reviews_count desc, updated_at desc").limit(12)
   end
 
   def show
@@ -15,7 +15,7 @@ class Api::BooksController < ApiController
 
   def real_index
     if params[:order] == "hot"
-      @books = Book.all.sort_by{|x| [x.book_reviews_count, x.updated_at]}
+      @books = Book.order("book_reviews_count desc, updated_at desc")
     else
       @books = Book.order("updated_at desc")
     end

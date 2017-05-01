@@ -4,6 +4,7 @@ zh-CN:
       long: "%Y-%m-%d %H:%M:%S"
   attributes:
     last_lesson_title: 最后发布的课程名称
+    book_type: 类型
     admin_only: 仅管理员可见
     created_at: 创建时间
     updated_at: 修改时间
