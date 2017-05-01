@@ -10,7 +10,7 @@ class Api::BooksController < ApiController
 
   def show
     @book = Book.find(params[:id])
-    @book_reviews = @book.book_reviews
+    @book_reviews = @book.book_reviews.order("replies_count desc")
   end
 
   def real_index
