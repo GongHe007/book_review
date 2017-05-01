@@ -59,6 +59,12 @@
   - if @books
     .row
       %h1{style: "display:inline-block"}= params[:book_type]
+      .btn-group.more
+        - class_name = "btn btn-default btn-sm"
+        - time_class = class_name + (params[:hot] ? "" : " active")
+        - hot_class = class_name + (params[:hot] ? " active" : "")
+        %a{style: "text-decoration:none", class: time_class, href: api_books_path(book_type: params[:book_type])} 默认
+        %a{style: "text-decoration:none", class: hot_class, href: api_books_path(book_type: params[:book_type], hot: true)} 热门
     %hr
     .container
       - @books.each_with_index do |book, index|
