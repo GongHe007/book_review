@@ -1,5 +1,6 @@
 .login-form
   .div.title 读书分享平台
+  .div.title2 快来登录~
   = form_for :session, :html => {:class => 'form-horizontal', style: "margin-left:60px;"}, url: login_sessions_path, method: :post do |f|
     .form-group
       =f.label :username, '账号', class: 'col-sm-2 control-label'
@@ -16,7 +17,7 @@
       .col-sm-offset-1.col-sm-6
         = f.submit "登录", class: 'btn btn-primary'
       .col-sm-offset-6
-        = link_to "注册", new_api_user_path, class: 'register'
+        = link_to "注册", new_api_user_path, class: 'register', style: "color:#FFF;"
 
 :css
   body {
@@ -26,18 +27,20 @@
     position:absolute;
     top:20%;
     left:35%;
-    border: solid;
     width: 400px;
     padding-bottom: 20px;
   }
   .title {
     width: 100%;
     text-align: center;
-    border-bottom: solid;
     height: 40px;
     line-height: 40px;
     margin-bottom: 21px;
     font-size: 20px;
+  }
+  .title2 {
+    text-align: center;
+    margin-bottom: 20px;
   }
   .error {
     color:red;

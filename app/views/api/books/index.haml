@@ -1,8 +1,37 @@
 .container
-  %h1 读书
+  - if @search_books
+    %h1 搜索结果
+    %hr
+    .container
+      - if @search_books.blank?
+        %h4{style: "color:red"} 无搜索结果...
+      - @search_books.each_with_index do |book, index|
+        - if index%6 == 0
+          .row
+        .col-md-2
+          .thumbnail
+            %a{:href => api_book_path(book)}
+              %img{:alt => "Lights", :src => book.img, :style => "width:100%; height: 200px"}/
+              .caption
+                %p= book.name
+                %p= book.author
+  %h1 新书速递
   %hr
   .container
-    - @books.each_with_index do |book, index|
+    - @time_books.each_with_index do |book, index|
+      - if index%6 == 0
+        .row
+      .col-md-2
+        .thumbnail
+          %a{:href => api_book_path(book)}
+            %img{:alt => "Lights", :src => book.img, :style => "width:100%; height: 200px"}/
+            .caption
+              %p= book.name
+              %p= book.author
+  %h1 最受关注图书榜
+  %hr
+  .container
+    - @time_books.each_with_index do |book, index|
       - if index%6 == 0
         .row
       .col-md-2
