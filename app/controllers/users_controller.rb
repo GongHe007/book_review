@@ -1,6 +1,4 @@
-class Api::UsersController < ApiController
-  before_action :check_user, except: [:new, :create]
-
+class UsersController < ApplicationController
   def new
     @user = User.new
   end

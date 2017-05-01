@@ -6,6 +6,7 @@ class Api::BooksController < ApiController
     end
     @time_books = Book.order("created_at desc").limit(12)
     @review_books = Book.order("book_reviews_count desc, created_at desc").limit(12)
+    @book_reviews = BookReview.where("title is not null").order("replies_count desc").limit(3)
   end
 
   def show

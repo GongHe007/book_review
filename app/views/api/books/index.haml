@@ -45,7 +45,22 @@
             .caption
               %p= book.name
               %p= book.author
+  .row
+    .col-md-10
+      %h3{style: "display: inline-block"} 热门书评
+      %a.more{href: api_book_reviews_path} 更多
+  - @book_reviews.each do |book_review|
+    .container.book_review{id: book_review.id}
+      %h3= book_review.title
+    %hr
 :css
   .more {
     margin-left: 20px;
   }
+
+:javascript
+  $(document).ready(function() {
+    $('.book_review').click(function(){
+      window.location = "/api/book_reviews/" + this.id;
+    })
+  })

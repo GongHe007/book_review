@@ -1,7 +1,7 @@
 .login-form
   .div.title 读书分享平台
   .div.title2 欢迎注册~
-  = form_for :user, :html => {:class => 'form-horizontal'}, url: api_users_path, method: :post do |f|
+  = form_for :user, :html => {:class => 'form-horizontal'}, url: users_path, method: :post do |f|
     .form-group
       =f.label :username, '手机号', class: 'col-sm-3 control-label'
       .col-sm-9
