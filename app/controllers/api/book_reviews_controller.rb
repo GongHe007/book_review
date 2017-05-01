@@ -1,7 +1,7 @@
 class Api::BookReviewsController < ApiController
   def index
     @book = Book.find(params[:book_id])
-    @book_reviews = @book.book_reviews.order("replies_count desc, updated_at desc").limit(3)
+    @book_reviews = @book.book_reviews.order("replies_count desc, created_at desc")
   end
 
   def new

@@ -1,17 +1,21 @@
 .container
   - if params[:order] == "hot"
-    %h1 最受关注图书榜
+    %h1.title 最受关注图书榜
   - else
-    %h1 新书速递
+    %h1.title 新书速递
   %hr
   .container
     - @books.each_with_index do |book, index|
-      - if index%6 == 0
+      - if index%4 == 0
         .row
-      .col-md-2
+      .col-md-3
         .thumbnail
           %a{:href => api_book_path(book)}
-            %img{:alt => "Lights", :src => book.img, :style => "width:100%; height: 200px"}/
+            %img{:alt => "Lights", :src => book.img, :style => "width:100%; height: 300px"}/
             .caption
               %p= book.name
               %p= book.author
+:css
+  .title {
+    text-align: center;
+  }
