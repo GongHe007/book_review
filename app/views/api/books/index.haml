@@ -15,7 +15,9 @@
               .caption
                 %p= book.name
                 %p= book.author
-  %h1 新书速递
+  .row
+    %h1{style: "display:inline-block"} 新书速递
+    %a.more{href: real_index_api_books_path} 更多
   %hr
   .container
     - @time_books.each_with_index do |book, index|
@@ -28,10 +30,12 @@
             .caption
               %p= book.name
               %p= book.author
-  %h1 最受关注图书榜
+  .row
+    %h1{style: "display:inline-block"} 最受关注图书榜
+    %a.more{href: real_index_api_books_path(order: "hot")} 更多
   %hr
   .container
-    - @time_books.each_with_index do |book, index|
+    - @review_books.each_with_index do |book, index|
       - if index%6 == 0
         .row
       .col-md-2
@@ -41,3 +45,7 @@
             .caption
               %p= book.name
               %p= book.author
+:css
+  .more {
+    margin-left: 20px;
+  }

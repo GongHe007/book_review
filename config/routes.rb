@@ -7,7 +7,11 @@ Rails.application.routes.draw do
 
   namespace :api do
     resources :users, only: [:new, :create]
-    resources :books, only: [:index, :show]
+    resources :books, only: [:index, :show] do
+      collection do
+        get :real_index
+      end
+    end
     resources :book_reviews, only: [:new, :create, :show]
     resources :replies, only: [:create]
   end
