@@ -12,7 +12,7 @@ Rails.application.routes.draw do
         get :real_index
       end
     end
-    resources :book_reviews, only: [:new, :create, :show]
+    resources :book_reviews, only: [:new, :index, :create, :show]
     resources :replies, only: [:create]
   end
 

@@ -1,4 +1,9 @@
 class Api::BookReviewsController < ApiController
+  def index
+    @book = Book.find(params[:book_id])
+    @book_reviews = BookReview.order("replies_count desc")
+  end
+
   def new
     @book_review = BookReview.new(book_id: params[:book_id])
   end
