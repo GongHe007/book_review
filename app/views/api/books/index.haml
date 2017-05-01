@@ -54,8 +54,8 @@
         %a.more{href: api_book_reviews_path} 更多
     - @book_reviews.each do |book_review|
       .container.book_review{id: book_review.id}
-        %h3= book_review.title
-      %hr
+        %h4= book_review.title
+      %hr{style: "margin:0"}
   - if @books
     .row
       %h1{style: "display:inline-block"}= params[:book_type]
