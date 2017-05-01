@@ -1,8 +1,12 @@
 class Api::BooksController < ApiController
   def index
     if params[:book_type]
-      @books = Book.where(book_type: params[:book_type]).order("created_at desc")
-      @books = @books.order("book_reviews_count desc, created_at desc") if params[:hot]
+      @books = Book.where(book_type: params[:book_type])
+      if params[:hot]
+        @books = @books.order("book_reviews_count desc, created_at desc")
+      else
+        @books = @books.order("created_at desc")
+      end
     else
       if params[:content].present?
         content = params[:content].gsub(" ", "")
