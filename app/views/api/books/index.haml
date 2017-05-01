@@ -58,8 +58,8 @@
       %hr{style: "margin:0"}
   - if @books
     .row
-      %h1{style: "display:inline-block"}= params[:book_type]
-      .btn-group.more
+      %h1= params[:book_type]
+      .btn-group
         - class_name = "btn btn-default btn-sm"
         - time_class = class_name + (params[:hot] ? "" : " active")
         - hot_class = class_name + (params[:hot] ? " active" : "")
