@@ -1,4 +1,11 @@
 zh-CN:
+  devise:
+    sessions:
+      admin_user:
+        signed_in: "登录成功"
+    failure:
+      admin_user:
+        unauthenticated: ""
   time:
     formats:
       long: "%Y-%m-%d %H:%M:%S"
@@ -69,6 +76,9 @@ zh-CN:
     models:
       ios_checking_version: ios审核版本
       channel: 专栏
+      book: 图书
+      book_review: 书评
+      reply: 回复
       order: 订单
       lesson: 课程
       admin: 管理
