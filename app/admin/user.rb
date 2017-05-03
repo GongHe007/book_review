@@ -1,9 +1,6 @@
 ActiveAdmin.register User do
   permit_params :username, :password, :nikename
   menu label: "用户", priority: 100
-  index :download_links => false do
-    # whatever
-  end
 # See permitted parameters documentation:
 # https://github.com/activeadmin/activeadmin/blob/master/docs/2-resource-customization.md#setting-up-strong-parameters
 #

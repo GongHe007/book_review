@@ -1,9 +1,6 @@
 ActiveAdmin.register Reply do
   permit_params :book_review_id, :content, :user_id, :online
   menu label: "回复", priority: 100
-  index :download_links => false do
-    # whatever
-  end
 # See permitted parameters documentation:
 # https://github.com/activeadmin/activeadmin/blob/master/docs/2-resource-customization.md#setting-up-strong-parameters
 #
