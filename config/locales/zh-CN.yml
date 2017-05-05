@@ -6,6 +6,7 @@ zh-CN:
     failure:
       admin_user:
         unauthenticated: ""
+        invalid: "账号或密码错误"
   time:
     formats:
       long: "%Y-%m-%d %H:%M:%S"
