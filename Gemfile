@@ -33,7 +33,7 @@ gem "will_paginate-bootstrap", "~> 1.0.1"
 gem 'bootstrap-sass', "~> 3.3.6"
 gem "haml-rails", "~> 0.9.0"
 gem 'inherited_resources', '~> 1.7'
-# gem 'activeadmin', github: 'activeadmin/activeadmin'
+gem 'activeadmin', github: 'activeadmin/activeadmin'
 gem 'devise'
 
 group :development, :test do
