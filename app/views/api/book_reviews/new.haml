@@ -7,17 +7,29 @@
       .col-sm-12
         =f.text_area :content, class: 'form-control', placeholder: "写下你的书评吧…", rows: 10
         =f.text_field :book_id, value: @book_review.book_id, style: "display:none"
-    .form-group
-      .col-sm-offset-1.col-sm-4
-        %strong.error=@notice
+    .form-group#error{hidden: true}
+      %strong.error 请写点什么再发布吧
     .form-group
       .col-sm-offset-1.col-sm-1
-        = f.submit "发布文章", class: 'btn btn-primary', style: "margin-left: 950px;"
+        = f.submit "发布文章", class: 'btn btn-primary', style: "margin-left: 950px;", id: "submit_btn"
 
 :css
   body {
     background-color: #eee;
   }
   .error {
-    color:red;
+    color: red;
+    margin-left: 15px;
   }
+
+:javascript
+  $(document).ready(function(){
+    $('#submit_btn').click(function(){
+      if($('#book_review_title').val().length == 0 && $('#book_review_content').val().length == 0){
+        $('#error').show();
+        window.event.preventDefault();
+      } else {
+        $('#error').hide();
+      }
+    })
+  })

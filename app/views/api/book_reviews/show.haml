@@ -11,6 +11,7 @@
   .form-group
     .col-sm-8{style: "margin-left:10%"}
       %input.form-control#reply-content{placeholder: "写下你的评论。。。"}
+      %strong.error#error{hidden: true} 请写点什么再发布吧
     .col-sm-2
       %a.btn.btn-primary#reply 发送
 
@@ -25,21 +26,32 @@
   %span= reply.content
   %hr
 
+
+:css
+  .error {
+    color: red;
+  }
+
 :javascript
   $(document).ready(function(){
     $('#reply').click(function(){
       var content = $('#reply-content').val()
-      $.ajax({
-        url: "#{api_replies_path}",
-        type: 'post',
-        data: {book_review_id: "#{@book_review.id}", content: content},
-        datatype: "json"
-      }).done(function(json){
-        if(json.success){
-          window.location.reload()
-        } else {
-          alert("发送失败")
-        }
-      })
+      if(content){
+        $.ajax({
+          url: "#{api_replies_path}",
+          type: 'post',
+          data: {book_review_id: "#{@book_review.id}", content: content},
+          datatype: "json"
+        }).done(function(json){
+          if(json.success){
+            window.location.reload()
+          } else {
+            alert("发送失败")
+          }
+        })
+      } else {
+        $('#error').show();
+        window.event.preventDefault();
+      }
     })
   })
